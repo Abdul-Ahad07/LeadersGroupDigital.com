@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Leaders Group Digital — discover digital experts, compare services and build your next project.">
+  <meta name="robots" content="index, follow">
+
+  <title>Leaders Group Digital | Digital Talent Marketplace</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- BACKGROUND -->
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="grain"></div>
+
+  <!-- HEADER -->
+  <header class="topbar">
+
+    <a href="#" class="brand" aria-label="Leaders Group Digital home">
+      <span class="brand-mark">L</span>
+      <span>
+        LEADERS <b>GROUP</b>
+        <small>DIGITAL MARKETPLACE</small>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#explore">Explore</a>
+      <a href="#categories">Categories</a>
+      <a href="#how">How it works</a>
+    </nav>
+
+    <div class="nav-actions" id="guestActions">
+      <button class="btn btn-quiet" data-open-auth="login" type="button">
+        Log in
+      </button>
+
+      <button class="btn btn-gold" data-open-auth="signup" type="button">
+        Join marketplace <span>↗</span>
+      </button>
+    </div>
+
+    <div class="nav-actions hidden" id="userActions">
+      <button class="user-chip" id="navUser" type="button">
+        Member
+      </button>
+
+      <button class="btn btn-quiet" id="logoutBtn" type="button">
+        Log out
+      </button>
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          <span class="live-dot"></span>
+          THE NEXT GENERATION TALENT MARKETPLACE
+        </div>
+
+        <h1>
+          Great work starts<br>
+          with the <span class="gold-text">right people.</span>
+        </h1>
+
+        <p class="hero-description">
+          Discover skilled digital professionals, explore services,
+          compare packages and build something extraordinary with
+          Leaders Group Digital.
+        </p>
+
+        <div class="hero-actions">
+
+          <button class="btn btn-gold btn-large" data-open-auth="signup" type="button">
+            Get started <span>↗</span>
+          </button>
+
+          <a href="#explore" class="btn btn-outline btn-large">
+            Explore experts <span>↓</span>
+          </a>
+
+        </div>
+
+        <div class="hero-proof">
+          <div class="proof-avatars">
+            <i>A</i>
+            <i>U</i>
+            <i>L</i>
+            <i>+</i>
+          </div>
+
+          <span>One marketplace. Endless possibilities.</span>
+        </div>
+
+      </div>
+
+      <div class="hero-visual">
+
+        <div class="orbit orbit-a"></div>
+        <div class="orbit orbit-b"></div>
+
+        <div class="hero-core">
+          <div class="core-ring"></div>
+          <div class="core-letter">L<span>.</span></div>
+          <div class="core-caption">BUILD • CONNECT • GROW</div>
+        </div>
+
+        <div class="float-card float-top">
+          <span class="float-icon">✦</span>
+          <div>
+            <b>Quality talent</b>
+            <small>Made for ambitious work</small>
+          </div>
+        </div>
+
+        <div class="float-card float-bottom">
+          <span class="float-icon">↗</span>
+          <div>
+            <b>Grow together</b>
+            <small>Your next project starts here</small>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- METRICS -->
+    <section class="metrics">
+
+      <div>
+        <strong id="expertCount">—</strong>
+        <span>Published experts</span>
+      </div>
+
+      <div>
+        <strong id="gigCount">—</strong>
+        <span>Available services</span>
+      </div>
+
+      <div>
+        <strong>24/7</strong>
+        <span>Explore anytime</span>
+      </div>
+
+      <div>
+        <strong>∞</strong>
+        <span>Room to grow</span>
+      </div>
+
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="section" id="categories">
+
+      <div class="section-heading">
+
+        <div>
+          <div class="eyebrow">FIND YOUR EXPERT</div>
+          <h2>
+            Explore <span class="gold-text">categories.</span>
+          </h2>
+        </div>
+
+        <p>
+          Find the right skills for your next big idea.
+        </p>
+
+      </div>
+
+      <div class="category-grid" id="categoryGrid">
+
+        <button class="category-card" data-category="Web Development" type="button">
+          <span>⌘</span>
+          <h3>Web Development</h3>
+          <p>Websites, stores and web apps</p>
+          <b>Explore category ↗</b>
+        </button>
+
+        <button class="category-card" data-category="AI & Automation" type="button">
+          <span>✳</span>
+          <h3>AI & Automation</h3>
+          <p>AI agents and smart workflows</p>
+          <b>Explore category ↗</b>
+        </button>
+
+        <button class="category-card" data-category="App Development" type="button">
+          <span>▣</span>
+          <h3>App Development</h3>
+          <p>Android and mobile experiences</p>
+          <b>Explore category ↗</b>
+        </button>
+
+        <button class="category-card" data-category="Design & Creative" type="button">
+          <span>◈</span>
+          <h3>Design & Creative</h3>
+          <p>Branding and visual design</p>
+          <b>Explore category ↗</b>
+        </button>
+
+        <button class="category-card" data-category="Digital Marketing" type="button">
+          <span>◎</span>
+          <h3>Digital Marketing</h3>
+          <p>Campaigns and growth strategy</p>
+          <b>Explore category ↗</b>
+        </button>
+
+        <button class="category-card" data-category="Business Services" type="button">
+          <span>⌁</span>
+          <h3>Business Services</h3>
+          <p>Professional digital support</p>
+          <b>Explore category ↗</b>
+        </button>
+
+      </div>
+
+    </section>
+
+    <!-- MARKETPLACE -->
+    <section class="section explore-section" id="explore">
+
+      <div class="section-heading">
+
+        <div>
+          <div class="eyebrow">THE MARKETPLACE</div>
+
+          <h2>
+            Talent that moves<br>
+            <span class="gold-text">ideas forward.</span>
+          </h2>
+        </div>
+
+        <p>
+          Discover professionals and explore their services.
+        </p>
+
+      </div>
+
+      <!-- SEARCH AND FILTERS -->
+      <div class="market-toolbar">
+
+        <div class="field">
+          <label for="gigSearch">Search services</label>
+          <input
+            type="search"
+            id="gigSearch"
+            placeholder="Search websites, AI agents, design..."
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="field">
+          <label for="gigCategory">Category</label>
+
+          <select id="gigCategory">
+            <option value="">All categories</option>
+            <option value="Web Development">Web Development</option>
+            <option value="AI & Automation">AI & Automation</option>
+            <option value="App Development">App Development</option>
+            <option value="Design & Creative">Design & Creative</option>
+            <option value="Digital Marketing">Digital Marketing</option>
+            <option value="Business Services">Business Services</option>
+          </select>
+        </div>
+
+        <button class="btn btn-outline" id="clearGigFilters" type="button">
+          Clear filters
+        </button>
+
+      </div>
+
+      <div
+        id="marketStatus"
+        class="form-message"
+        role="status"
+        aria-live="polite"
+      >
+        Connecting to the marketplace...
+      </div>
+
+      <!-- GIG RESULTS -->
+      <div class="gig-grid" id="gigGrid">
+
+        <div class="market-preview">
+          <div class="preview-symbol">✦</div>
+          <h3>Loading available services...</h3>
+          <p>Published expert services will appear here.</p>
+        </div>
+
+      </div>
+
+      <div class="market-footer">
+        <button class="btn btn-outline hidden" id="loadMoreGigs" type="button">
+          Load more services
+        </button>
+      </div>
+
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section how-section" id="how">
+
+      <div class="eyebrow">SIMPLE BY DESIGN</div>
+
+      <h2>
+        From idea to <span class="gold-text">done.</span>
+      </h2>
+
+      <div class="steps-grid">
+
+        <article>
+          <span>01</span>
+          <h3>Create an account</h3>
+          <p>Join as a client or digital expert.</p>
+        </article>
+
+        <article>
+          <span>02</span>
+          <h3>Discover talent</h3>
+          <p>Explore services and find a suitable expert.</p>
+        </article>
+
+        <article>
+          <span>03</span>
+          <h3>Start a project</h3>
+          <p>Agree on project scope, package and delivery.</p>
+        </article>
+
+        <article>
+          <span>04</span>
+          <h3>Grow your reputation</h3>
+          <p>Build a professional record through completed work.</p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+
+      <div class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</div>
+
+      <h2>
+        Make your next move<br>
+        <span class="gold-text">a powerful one.</span>
+      </h2>
+
+      <button class="btn btn-gold btn-large" data-open-auth="signup" type="button">
+        Join Leaders Group Digital ↗
+      </button>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <a href="#" class="brand">
+      <span class="brand-mark">L</span>
+      <span>
+        LEADERS <b>GROUP</b>
+        <small>DIGITAL MARKETPLACE</small>
+      </span>
+    </a>
+
+    <p>
+      © <span id="year"></span> Leaders Group Digital.
+      Built for ambitious people.
+    </p>
+
+  </footer>
+
+  <!-- MEMBER DASHBOARD -->
+  <section class="member-panel hidden" id="memberPanel">
+
+    <div class="member-header">
+
+      <div>
+        <div class="eyebrow">MEMBER SPACE</div>
+
+        <h2>
+          Welcome,
+          <span class="gold-text" id="memberName">Member</span>
+        </h2>
+
+        <p id="memberRole">Marketplace member</p>
+      </div>
+
+      <button
+        class="icon-btn"
+        id="closeMember"
+        type="button"
+        aria-label="Close member dashboard"
+      >
+        ✕
+      </button>
+
+    </div>
+
+    <div class="member-welcome">
+
+      <span class="status-dot"></span>
+
+      <div>
+        <b>You're signed in</b>
+        <p id="memberAccountStatus">
+          Your account authentication is active.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- MEMBER NAVIGATION -->
+    <nav class="member-navigation" aria-label="Member dashboard">
+
+      <button class="active" data-member-tab="overview" type="button">
+        Overview
+      </button>
+
+      <button data-member-tab="profile" type="button">
+        My profile
+      </button>
+
+      <button data-member-tab="gigs" type="button">
+        My gigs
+      </button>
+
+      <button data-member-tab="projects" type="button">
+        Projects
+      </button>
+
+      <button data-member-tab="reputation" type="button">
+        Reputation
+      </button>
+
+    </nav>
+
+    <!-- OVERVIEW -->
+    <div class="member-tab active" id="memberOverview">
+
+      <div class="member-cards">
+
+        <article>
+          <span>01</span>
+          <h3>My profile</h3>
+          <p>Manage your marketplace identity.</p>
+
+          <button class="btn btn-outline" data-member-open="profile" type="button">
+            Open profile
+          </button>
+        </article>
+
+        <article>
+          <span>02</span>
+          <h3>My gigs</h3>
+          <p>Create and manage your services.</p>
+
+          <button class="btn btn-outline" data-member-open="gigs" type="button">
+            Manage gigs
+          </button>
+        </article>
+
+        <article>
+          <span>03</span>
+          <h3>My projects</h3>
+          <p>View your marketplace projects.</p>
+
+          <button class="btn btn-outline" data-member-open="projects" type="button">
+            View projects
+          </button>
+        </article>
+
+      </div>
+
+    </div>
+
+    <!-- PROFILE -->
+    <div class="member-tab hidden" id="memberProfile">
+
+      <h3>My profile</h3>
+
+      <form id="profileForm">
+
+        <div class="field">
+          <label for="profileName">Display name</label>
+          <input
+            id="profileName"
+            type="text"
+            maxlength="80"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="profileHeadline">Professional headline</label>
+          <input
+            id="profileHeadline"
+            type="text"
+            maxlength="120"
+          >
+        </div>
+
+        <div class="field">
+          <label for="profileBio">About me</label>
+          <textarea
+            id="profileBio"
+            rows="5"
+            maxlength="1500"
+          ></textarea>
+        </div>
+
+        <div class="field">
+          <label for="profileSkills">Skills (comma separated)</label>
+          <input
+            id="profileSkills"
+            type="text"
+            placeholder="WordPress, React, Automation"
+          >
+        </div>
+
+        <div class="field">
+          <label for="profileCountry">Country</label>
+          <input
+            id="profileCountry"
+            type="text"
+            value="Pakistan"
+          >
+        </div>
+
+        <button class="btn btn-gold" type="submit" id="saveProfileBtn">
+          Save profile
+        </button>
+
+        <p
+          id="profileMessage"
+          class="form-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+      </form>
+
+    </div>
+
+    <!-- GIG MANAGEMENT -->
+    <div class="member-tab hidden" id="memberGigs">
+
+      <div class="section-heading">
+
+        <div>
+          <div class="eyebrow">YOUR SERVICES</div>
+          <h3>Manage your gigs</h3>
+        </div>
+
+        <span id="gigLimitText">Maximum 5 gigs</span>
+
+      </div>
+
+      <div id="myGigGrid" class="gig-grid"></div>
+
+      <!-- GIG EDITOR -->
+      <div class="admin-card" id="gigEditor">
+
+        <h3 id="gigEditorTitle">Create a service</h3>
+
+        <form id="gigForm">
+
+          <input type="hidden" id="gigId">
+
+          <div class="field">
+            <label for="gigTitle">Gig title</label>
+            <input
+              id="gigTitle"
+              type="text"
+              minlength="3"
+              maxlength="120"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="gigCategoryInput">Category</label>
+
+            <select id="gigCategoryInput" required>
+              <option value="">Select category</option>
+              <option>Web Development</option>
+              <option>AI & Automation</option>
+              <option>App Development</option>
+              <option>Design & Creative</option>
+              <option>Digital Marketing</option>
+              <option>Business Services</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="gigDescription">Description</label>
+            <textarea id="gigDescription" rows="5" required></textarea>
+          </div>
+
+          <!-- BASIC PACKAGE -->
+          <h4>Basic package</h4>
+
+          <div class="field">
+            <label for="basicPrice">Price (PKR)</label>
+            <input id="basicPrice" type="number" min="1" required>
+          </div>
+
+          <div class="field">
+            <label for="basicDelivery">Delivery days</label>
+            <input id="basicDelivery" type="number" min="1" max="365" required>
+          </div>
+
+          <div class="field">
+            <label for="basicRevisions">Revisions</label>
+            <input id="basicRevisions" type="number" min="0" max="50" required>
+          </div>
+
+          <div class="field">
+            <label for="basicScope">What's included?</label>
+            <textarea id="basicScope" rows="3" required></textarea>
+          </div>
+
+          <!-- STANDARD PACKAGE -->
+          <h4>Standard package</h4>
+
+          <div class="field">
+            <label for="standardPrice">Price (PKR)</label>
+            <input id="standardPrice" type="number" min="1" required>
+          </div>
+
+          <div class="field">
+            <label for="standardDelivery">Delivery days</label>
+            <input id="standardDelivery" type="number" min="1" max="365" required>
+          </div>
+
+          <div class="field">
+            <label for="standardRevisions">Revisions</label>
+            <input id="standardRevisions" type="number" min="0" max="50" required>
+          </div>
+
+          <div class="field">
+            <label for="standardScope">What's included?</label>
+            <textarea id="standardScope" rows="3" required></textarea>
+          </div>
+
+          <!-- PREMIUM PACKAGE -->
+          <h4>Premium package</h4>
+
+          <div class="field">
+            <label for="premiumPrice">Price (PKR)</label>
+            <input id="premiumPrice" type="number" min="1" required>
+          </div>
+
+          <div class="field">
+            <label for="premiumDelivery">Delivery days</label>
+            <input id="premiumDelivery" type="number" min="1" max="365" required>
+          </div>
+
+          <div class="field">
+            <label for="premiumRevisions">Revisions</label>
+            <input id="premiumRevisions" type="number" min="0" max="50" required>
+          </div>
+
+          <div class="field">
+            <label for="premiumScope">What's included?</label>
+            <textarea id="premiumScope" rows="3" required></textarea>
+          </div>
+
+          <!-- PUBLISHING STATUS -->
+          <div class="field">
+            <label for="gigStatus">Publishing status</label>
+
+            <select id="gigStatus">
+              <option value="draft">Save as draft</option>
+              <option value="published">Publish gig</option>
+            </select>
+          </div>
+
+          <button class="btn btn-gold btn-large" id="saveGigBtn" type="submit">
+            Save gig
+          </button>
+
+          <button class="btn btn-outline hidden" id="cancelGigEdit" type="button">
+            Cancel editing
+          </button>
+
+          <p
+            id="gigMessage"
+            class="form-message"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="member-tab hidden" id="memberProjects">
+
+      <h3>My projects</h3>
+
+      <div id="myProjectList">
+        <p>
+          Projects will appear here when the secure project workflow is activated.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- REPUTATION -->
+    <div class="member-tab hidden" id="memberReputation">
+
+      <h3>Expert reputation</h3>
+
+      <div class="member-cards">
+
+        <article>
+          <span>RANK XP</span>
+          <h3 id="memberXP">0</h3>
+          <p>Permanent reputation points.</p>
+        </article>
+
+        <article>
+          <span>STYLE POINTS</span>
+          <h3 id="memberStylePoints">0</h3>
+          <p>Spendable cosmetic points.</p>
+        </article>
+
+        <article>
+          <span>EXPERT RANK</span>
+          <h3 id="memberRank">Rookie</h3>
+          <p>Your marketplace reputation level.</p>
+        </article>
+
+      </div>
+
+      <p id="reputationMessage" class="form-message">
+        Reputation rewards are granted only for qualifying completed projects.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- AUTH MODAL -->
+  <div
+    class="modal-backdrop"
+    id="authModal"
+    aria-hidden="true"
+  >
+
+  <div
+    class="auth-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="authTitle"
+  >
+
+    <button
+      class="icon-btn modal-close"
+      id="closeAuth"
+      type="button"
+      aria-label="Close login window"
+    >
+        ✕
+    </button>
+
+    <div class="eyebrow" id="authEyebrow">WELCOME TO LGD</div>
+
+    <h2 id="authTitle">Welcome back.</h2>
+
+    <p id="authSubtitle">
+        Sign in to access your marketplace account.
+    </p>
+
+    <div class="auth-tabs">
+      <button
+        class="active"
+        id="loginTab"
+        type="button"
+      >
+        Log in
+      </button>
+
+      <button
+        id="signupTab"
+        type="button"
+      >
+          Create account
+      </button>
+    </div>
+
+    <form id="authForm">
+
+      <div class="field hidden" id="nameField">
+        <label for="fullName">Full name</label>
+
+        <input
+          id="fullName"
+          type="text"
+          maxlength="80"
+          autocomplete="name"
+          placeholder="Enter your full name"
+        >
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+
+        <input
+          id="email"
+          type="email"
+          autocomplete="email"
+          placeholder="name@example.com"
+            required
+        >
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+
+        <input
+          id="password"
+          type="password"
+          minlength="6"
+          autocomplete="current-password"
+          placeholder="Enter your password"
+            required
+        >
+      </div>
+
+      <div class="field hidden" id="roleField">
+        <label for="accountRole">Join as</label>
+
+        <select id="accountRole">
+          <option value="client">Client — I want to hire experts</option>
+          <option value="expert">Expert — I want to offer services</option>
+        </select>
+      </div>
+
+      <p
+        id="authMessage"
+        class="form-message"
+        role="status"
+        aria-live="polite"
+      ></p>
+
+      <button
+        class="btn btn-gold btn-large auth-submit"
+        id="authSubmit"
+        type="submit"
+      >
+          Log in
+      </button>
+
+    </form>
+
+    <p class="auth-terms">
+        By continuing, you agree to use Leaders Group Digital responsibly.
+    </p>
+
+  </div>
+
+</div>
+
+  <!-- TOAST NOTIFICATIONS -->
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <!-- APPLICATION JAVASCRIPT -->
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>
