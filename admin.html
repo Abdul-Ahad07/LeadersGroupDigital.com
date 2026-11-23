@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Leaders Group Digital secure administration portal.">
+  <title>LGD | Admin Command Center</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="admin-body">
+
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="grain"></div>
+
+  <main class="admin-shell">
+
+    <!-- HEADER -->
+    <header class="admin-top">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">L</span>
+        <span>
+          LEADERS <b>GROUP</b>
+          <small>ADMINISTRATION</small>
+        </span>
+      </a>
+
+      <a class="btn btn-quiet" href="index.html">
+        ← Public website
+      </a>
+    </header>
+
+    <!-- ADMIN LOGIN -->
+    <section class="admin-card" id="adminLogin">
+
+      <div class="eyebrow">RESTRICTED ACCESS</div>
+
+      <h1 style="font:800 29px Manrope;margin-top:12px">
+        Admin portal.
+      </h1>
+
+      <p>
+        Sign in with an authorized administrator account.
+        Your access will be verified through Firebase custom claims.
+      </p>
+
+      <form id="adminForm">
+
+        <div class="field">
+          <label for="adminEmail">Administrator email</label>
+          <input
+            id="adminEmail"
+            type="email"
+            autocomplete="username"
+            placeholder="admin@example.com"
+            required
+          >
+        </div>
+
+        <div class="field">
+          <label for="adminPassword">Password</label>
+          <input
+            id="adminPassword"
+            type="password"
+            autocomplete="current-password"
+            placeholder="Enter administrator password"
+            required
+          >
+        </div>
+
+        <button
+          class="btn btn-gold btn-large"
+          id="adminSubmit"
+          type="submit"
+        >
+          Secure login ↗
+        </button>
+
+      </form>
+
+      <div
+        class="admin-status"
+        id="adminStatus"
+        role="status"
+        aria-live="polite"
+      ></div>
+
+    </section>
+
+    <!-- ADMIN DASHBOARD -->
+    <section class="hidden" id="adminArea">
+
+      <div class="eyebrow">CONTROL CENTER</div>
+
+      <h1 style="font:800 clamp(28px,5vw,44px) Manrope;margin-top:12px">
+        Command <span class="gold-text">center.</span>
+      </h1>
+
+      <p style="color:var(--muted);font-size:12px;margin-top:10px">
+        Administrator identity verified.
+        Backend modules are awaiting activation.
+      </p>
+
+      <!-- ADMIN MODULES -->
+      <div class="admin-dashboard">
+
+        <article class="admin-tile">
+          <span>01 / PEOPLE</span>
+          <h3>User management</h3>
+          <p>Account directory, user roles and account status management.</p>
+        </article>
+
+        <article class="admin-tile">
+          <span>02 / IDENTITY</span>
+          <h3>KYC verification</h3>
+          <p>Secure client and expert identity verification workflow.</p>
+        </article>
+
+        <article class="admin-tile">
+          <span>03 / MARKETPLACE</span>
+          <h3>Gigs & categories</h3>
+          <p>Review expert services, categories and marketplace listings.</p>
+        </article>
+
+        <article class="admin-tile">
+          <span>04 / PROJECTS</span>
+          <h3>Project monitoring</h3>
+          <p>Project progress, delivery status and completion oversight.</p>
+        </article>
+
+        <article class="admin-tile">
+          <span>05 / FINANCE</span>
+          <h3>Payments & commission</h3>
+          <p>Provider-verified transactions and platform commission records.</p>
+        </article>
+
+        <article class="admin-tile">
+          <span>06 / PAYOUTS</span>
+          <h3>Withdrawals</h3>
+          <p>Expert payout requests and verified withdrawal processing.</p>
+        </article>
+
+        <article class="admin-tile">
+          <span>07 / SAFETY</span>
+          <h3>Disputes & reports</h3>
+          <p>Moderation, suspicious activity and dispute case management.</p>
+        </article>
+
+        <article class="admin-tile">
+          <span>08 / REPUTATION</span>
+          <h3>XP & Style Points</h3>
+          <p>Expert ranks, reward rules and audited reputation adjustments.</p>
+        </article>
+
+        <article class="admin-tile">
+          <span>09 / AI SYSTEM</span>
+          <h3>AI command center</h3>
+          <p>AI moderation, reporting and assistant integration.</p>
+        </article>
+
+      </div>
+
+      <!-- BACKEND STATUS -->
+      <section class="admin-card" style="margin-top:20px">
+
+        <div class="eyebrow">SYSTEM STATUS</div>
+
+        <h2 style="margin-top:12px">
+          Secure backend required
+        </h2>
+
+        <p>
+          Dashboard modules are currently interface placeholders.
+          Payment processing, KYC, withdrawals, reputation changes
+          and AI integrations must be connected through authorized
+          server-side services.
+        </p>
+
+        <p>
+          Never enter Groq, Gemini, payment-provider or private
+          credentials into this browser page.
+        </p>
+
+        <button
+          class="btn btn-outline"
+          id="adminLogout"
+          type="button"
+        >
+          Sign out
+        </button>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <!-- FIREBASE ADMIN AUTHENTICATION -->
+  <script type="module">
+
+    import {
+      auth,
+      signInWithEmailAndPassword,
+      signOut,
+      onAuthStateChanged
+    } from "./firebase.js";
+
+    const $ = (id) => document.getElementById(id);
+
+    const loginSection = $("adminLogin");
+    const adminSection = $("adminArea");
+    const status = $("adminStatus");
+    const loginButton = $("adminSubmit");
+
+    let checkingAdmin = false;
+
+    function showLogin(message = "") {
+      loginSection.classList.remove("hidden");
+      adminSection.classList.add("hidden");
+      status.textContent = message;
+    }
+
+    function showDashboard() {
+      loginSection.classList.add("hidden");
+      adminSection.classList.remove("hidden");
+      status.textContent = "";
+    }
+
+    async function verifyAdmin(user) {
+
+      if (!user || checkingAdmin) return;
+
+      checkingAdmin = true;
+
+      try {
+
+        const token = await user.getIdTokenResult(true);
+
+        if (token.claims.admin === true) {
+          showDashboard();
+        } else {
+          await signOut(auth);
+          showLogin(
+            "Access denied. This account is not an authorized administrator."
+          );
+        }
+
+      } catch (error) {
+
+        console.error("Admin verification error:", error);
+
+        try {
+          await signOut(auth);
+        } catch (logoutError) {
+          console.error(logoutError);
+        }
+
+        showLogin("Administrator verification failed. Please try again.");
+
+      } finally {
+        checkingAdmin = false;
+      }
+    }
+
+    // LOGIN
+    $("adminForm").addEventListener("submit", async (event) => {
+
+      event.preventDefault();
+
+      if (loginButton.disabled) return;
+
+      const email = $("adminEmail").value.trim();
+      const password = $("adminPassword").value;
+
+      loginButton.disabled = true;
+      loginButton.textContent = "Verifying...";
+      status.textContent = "";
+
+      try {
+
+        const result = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+
+        await verifyAdmin(result.user);
+
+      } catch (error) {
+
+        console.error("Admin login error:", error);
+
+        const errors = {
+          "auth/invalid-credential":
+            "Invalid administrator email or password.",
+
+          "auth/too-many-requests":
+            "Too many attempts. Please try again later.",
+
+          "auth/network-request-failed":
+            "Network error. Check your internet connection.",
+
+          "auth/user-disabled":
+            "This administrator account has been disabled."
+        };
+
+        showLogin(
+          errors[error.code] || "Administrator login failed."
+        );
+
+      } finally {
+
+        loginButton.disabled = false;
+        loginButton.textContent = "Secure login ↗";
+
+      }
+
+    });
+
+    // LOGOUT
+    $("adminLogout").addEventListener("click", async () => {
+
+      try {
+
+        await signOut(auth);
+        showLogin("You have been signed out.");
+
+      } catch (error) {
+
+        console.error(error);
+        status.textContent = "Unable to sign out. Please try again.";
+
+      }
+
+    });
+
+    // AUTH SESSION CHECK
+    onAuthStateChanged(auth, async (user) => {
+
+      if (!user) {
+        checkingAdmin = false;
+        showLogin("");
+        return;
+      }
+
+      await verifyAdmin(user);
+
+    });
+
+  </script>
+
+</body>
+</html>
